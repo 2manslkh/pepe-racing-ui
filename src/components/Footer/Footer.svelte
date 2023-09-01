@@ -64,25 +64,6 @@
     font-weight: 400;
   }
 
-  header-tabs {
-    /* Frame 2 */
-
-    /* Auto layout */
-
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-    gap: 40px;
-
-    width: auto;
-
-    /* Inside auto layout */
-    color: $background;
-    font-size: 1rem;
-    font-weight: 400;
-  }
   small-text {
     color: #fff;
     text-align: center;
@@ -91,20 +72,5 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-  }
-
-  a {
-    color: none;
-    text-decoration: none;
-  }
-
-  a:active {
-    color: black;
-    background-color: transparent;
-  }
-
-  a:hover {
-    color: $secondary_1;
-    background-color: transparent;
   }
 </style>

@@ -75,22 +75,6 @@
     width: 100%;
   }
 
-  background {
-    position: absolute;
-    display: flex;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-      to bottom,
-      #049c5f26,
-      #049c5f26 5px,
-      transparent 5px,
-      transparent 10px
-    );
-    z-index: -1;
-  }
-
   pepe-underlay {
     background: url("../public/images/pepe-ascii.png") no-repeat center center fixed;
     position: absolute;
