@@ -23,6 +23,7 @@
 
 <style lang="scss">
   @import '../../styles/colours';
+
   div {
     display: flex;
     padding: 16px;
@@ -33,8 +34,18 @@
     border: 2px solid $primary_border;
     box-shadow: 0px 0px 5px 0px $primary_border;
     height: 100%;
+    min-width: 400px;
+
     font-size: 1.5rem;
     user-select: none; /* Prevent text selection */
+    font-size: x-large;
+  }
+
+  @media (max-width: 768px) {
+    div {
+      font-size: small;
+      min-width: 240px;
+    }
   }
 
   div:hover {

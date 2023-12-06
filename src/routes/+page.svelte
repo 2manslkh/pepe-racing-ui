@@ -1,21 +1,27 @@
 <script lang="ts">
-  import PlaynowButton from "../components/Button/PlaynowButton.svelte";
-  import SectionContainer from "../components/Container/SectionContainer.svelte";
-  import VerticalStack from "../components/Stack/VerticalStack.svelte";
-  import HorizontalStack from "../components/Stack/HorizontalStack.svelte";
+  import PlaynowButton from '../components/Button/PlaynowButton.svelte'
+  import SectionContainer from '../components/Container/SectionContainer.svelte'
+  import VerticalStack from '../components/Stack/VerticalStack.svelte'
+  import HorizontalStack from '../components/Stack/HorizontalStack.svelte'
 
-  import Screenshot_1 from "../public/images/screenshot-1.png";
-  import PPTOKEN from "../public/images/pprace-token.png";
-  import UniswapButton from "../public/images/uniswap-button.png";
-  import DextoolsButton from "../public/images/dextools-button.png";
-  import GitbookButton from "../public/images/gitbook-button.png";
-  import { breakpoints } from "../styles/breakpoints";
+  import Screenshot_1 from '../public/images/screenshot-1.png'
+  import PPTOKEN from '../public/images/pprace-token.png'
+  import DextoolsButton from '../public/images/dextools-button.png'
+  import GitbookButton from '../public/images/gitbook-button.png'
+  import { breakpoints } from '../styles/breakpoints'
 
-  import TextContainer from "../components/Container/TextContainer.svelte";
-  import ContractContainer from "../components/Container/ContractContainer.svelte";
+  import TextContainer from '../components/Container/TextContainer.svelte'
+  import ContractContainer from '../components/Container/ContractContainer.svelte'
+  import {
+    PEPERACING_TOKEN_ADDRESS,
+    PEPERACING_RACE_ADDRESS,
+  } from '../constants'
+  import { formatAddress } from '../utils'
+  import UniswapButton from '../components/Button/UniswapButton.svelte'
+  import DexscreenerButton from '../components/Button/DexscreenerButton.svelte'
 
-  let backgroundEl: any;
-  let screenSize: number;
+  let backgroundEl: any
+  let screenSize: number
 </script>
 
 <svelte:window bind:innerWidth={screenSize} />
@@ -24,7 +30,9 @@
   <VerticalStack>
     <title><span style="color: #049C5F">PepeRace</span></title>
     <description
-      >First Telegram <span style="color: #049C5F"><span style="color: #049C5F">PePe</span></span>
+      >First Telegram <span style="color: #049C5F"
+        ><span style="color: #049C5F">PePe</span></span
+      >
       Race Bot <br /> Bet on your winning
       <span style="color: #049C5F">PePe</span>
     </description>
@@ -51,20 +59,24 @@
       {/if}
       <VerticalStack>
         <game-rule>
-          1. <span style="color: #049C5F">PepeRace</span> starts every 5 minutes, with 4 PePes in
-          race. /bet on your favourite <span style="color: #049C5F">PePe</span> suit ()
+          1. <span style="color: #049C5F">PepeRace</span> starts every 5
+          minutes, with 4 PePes in race. /bet on your favourite
+          <span style="color: #049C5F">PePe</span> suit ()
         </game-rule>
         <game-rule>
           2. <span style="color: #049C5F">PepeRace</span> Begins. Your
-          <span style="color: #049C5F">PePe</span> leaps forward 1 tile when your suit is drawn.
+          <span style="color: #049C5F">PePe</span> leaps forward 1 tile when your
+          suit is drawn.
         </game-rule>
         <game-rule
-          >3. Your <span style="color: #049C5F">PePe</span> wins if it is the first
+          >3. Your <span style="color: #049C5F">PePe</span> wins if it is the
+          first
           <span style="color: #049C5F">PePe</span> crossing the finish line.
         </game-rule>
         <game-rule>
-          4. The winning <span style="color: #049C5F">PePe</span> will earn the stakes paid out by
-          the bets placed by players on losing Pepe. Settled by the
+          4. The winning <span style="color: #049C5F">PePe</span> will earn the
+          stakes paid out by the bets placed by players on losing Pepe. Settled
+          by the
           <span style="color: #049C5F">PepeRace</span> contract.
         </game-rule>
       </VerticalStack>
@@ -80,12 +92,13 @@
     <HorizontalStack>
       <VerticalStack>
         <game-rule>
-          1. Connect Wallet via @PePeRace_bot Message @PePeRace_bot on Telegram and type /Connect
+          1. Connect Wallet via @PePeRace_bot Message @PePeRace_bot on Telegram
+          and type /Connect
         </game-rule>
         <game-rule> 2. XXX XXXXX </game-rule>
         <game-rule>
-          3. Place your /Bet during Race Type /Bet and indicate your amount and PePe Suit. E.g.
-          “/Bet 1000 hearts” to bet 1,000 $PPRACE on hearts PePe
+          3. Place your /Bet during Race Type /Bet and indicate your amount and
+          PePe Suit. E.g. “/Bet 1000 hearts” to bet 1,000 $PPRACE on hearts PePe
         </game-rule>
         <PlaynowButton buttonText="PLAY NOW" />
       </VerticalStack>
@@ -108,23 +121,33 @@
   <VerticalStack>
     <section-title>$PPRACE</section-title>
     <game-rule>
-      <span style="color: #049C5F">$PPRACE</span> is the betting currency to bet in the
-      <span style="color: #049C5F">PePeRace</span>. Deflationary with burns from every round.
+      <span style="color: #049C5F">$PPRACE</span> is the betting currency to bet
+      in the
+      <span style="color: #049C5F">PePeRace</span>. Deflationary with burns from
+      every round.
     </game-rule>
     <pepe-token-wrapper>
-      <img src={PPTOKEN} alt="pepetoken" style="width: 100%; height: 100%; object-fit: cover;" />
+      <img
+        src={PPTOKEN}
+        alt="pepetoken"
+        style="width: 100%; height: 100%; object-fit: cover;"
+      />
     </pepe-token-wrapper>
-    <ContractContainer>$PPRACE: 0X123EASESDSSJDIO212AE1JH2K1E</ContractContainer>
+    <ContractContainer stringToCopy={PEPERACING_TOKEN_ADDRESS}
+      >{`$PPRACE: ${formatAddress(
+        PEPERACING_TOKEN_ADDRESS
+      )}`}</ContractContainer
+    >
     {#if screenSize >= breakpoints.large}
       <HorizontalStack>
-        <img src={UniswapButton} alt="uniswap-button" />
-        <img src={DextoolsButton} alt="dextools-button" />
+        <UniswapButton />
+        <DexscreenerButton />
       </HorizontalStack>
     {/if}
     {#if screenSize < breakpoints.large}
       <div>
-        <img src={UniswapButton} alt="uniswap-button" width="150px" />
-        <img src={DextoolsButton} alt="dextools-button" width="150px" />
+        <UniswapButton />
+        <DexscreenerButton />
       </div>
     {/if}
   </VerticalStack>
@@ -174,17 +197,21 @@
 
 <info-container>
   <subtitle>Contracts</subtitle>
-  <ContractContainer>$PPRACE: 0X123EASESDSSJDIO212AE1JH2K1E</ContractContainer>
-  <ContractContainer>$PPRACE: 0X123EASESDSSJDIO212AE1JH2K1E</ContractContainer>
-  <ContractContainer>$PPRACE: 0X123EASESDSSJDIO212AE1JH2K1E</ContractContainer>
-  <ContractContainer>$PPRACE: 0X123EASESDSSJDIO212AE1JH2K1E</ContractContainer>
+  <ContractContainer stringToCopy={PEPERACING_TOKEN_ADDRESS}
+    >{`$PPRACE: ${formatAddress(PEPERACING_TOKEN_ADDRESS)}`}</ContractContainer
+  >
+  <ContractContainer stringToCopy={PEPERACING_RACE_ADDRESS}
+    >{`PEPERACING: ${formatAddress(
+      PEPERACING_RACE_ADDRESS
+    )}`}</ContractContainer
+  >
 </info-container>
 
 <PlaynowButton buttonText="PLAY NOW" />
 
 <style lang="scss">
-  @import "../styles/colours";
-  @import "../styles/breakpoints.scss";
+  @import '../styles/colours';
+  @import '../styles/breakpoints.scss';
 
   title {
     width: auto;
@@ -300,7 +327,8 @@
   }
 
   pepe-underlay {
-    background: url("../public/images/pepe-ascii.png") no-repeat center center fixed;
+    background: url('../public/images/pepe-ascii.png') no-repeat center center
+      fixed;
     position: absolute;
     width: 100%;
     height: 100%;

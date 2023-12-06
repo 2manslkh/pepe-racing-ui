@@ -6,7 +6,7 @@
 </container>
 
 <style lang="scss">
-  @import "../../styles/colours";
+  @import '../../styles/colours';
   container {
     display: flex;
     flex-direction: row;
@@ -15,7 +15,7 @@
 
     width: 100%;
 
-    gap: 5rem;
+    gap: 3rem;
     word-break: break-all;
   }
 </style>
