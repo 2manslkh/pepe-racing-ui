@@ -1,11 +1,13 @@
 <script lang="ts">
   // variables
   import Logo from "../../public/images/Logo.svg";
-  import TwitterLogo from "../../public/images/twitter.png";
+
   import { breakpoints } from "../../styles/breakpoints";
   import TextContainer from "../Container/TextContainer.svelte";
   import PlaynowButton from "../Button/PlaynowButton.svelte";
   import RowContainer from "../Container/RowContainer.svelte";
+    import TelegramLogo from "../SocialIcons/TelegramLogo.svelte";
+    import TwitterLogo from "../SocialIcons/TwitterLogo.svelte";
 
   let screenSize: number;
   let modalOpen = false;
@@ -44,7 +46,8 @@
       </TextContainer>
     </RowContainer>
     <RowContainer>
-      <img src={TwitterLogo} alt="twitter" width="30px" height="25px" />
+      <TelegramLogo />
+      <TwitterLogo />
       <PlaynowButton buttonText="PLAY NOW" />
     </RowContainer>
   {/if}
