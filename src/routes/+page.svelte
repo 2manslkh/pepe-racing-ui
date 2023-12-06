@@ -152,7 +152,6 @@
     {/if}
   </VerticalStack>
 </SectionContainer>
-
 {#if screenSize >= breakpoints.large}
   <HorizontalStack>
     <VerticalStack>
