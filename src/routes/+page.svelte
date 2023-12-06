@@ -28,7 +28,7 @@
 
 <SectionContainer id="main" stripes={true}>
   <VerticalStack>
-    <title><span style="color: #049C5F">PepeRace</span></title>
+    <title>PepeRace</title>
     <description
       >First Telegram <span style="color: #049C5F"
         ><span style="color: #049C5F">PePe</span></span
